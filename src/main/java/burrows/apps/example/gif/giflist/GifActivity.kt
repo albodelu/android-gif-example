@@ -1,10 +1,10 @@
 package burrows.apps.example.gif.giflist
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatDialog
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.SearchView
+import androidx.appcompat.app.AppCompatDialog
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.SearchView
 import android.text.TextUtils
 import android.util.Log
 import android.view.Menu
@@ -46,7 +46,7 @@ class GifActivity : DaggerAppCompatActivity(), GifContract.View, GifAdapter.OnIt
     @Inject lateinit var gifPresenter: GifPresenter
     @Inject lateinit var refWatcher: RefWatcher
     @Inject lateinit var imageService: ImageService
-    private lateinit var gridLayoutManager: GridLayoutManager
+    private lateinit var gridLayoutManager: androidx.recyclerview.widget.GridLayoutManager
     private lateinit var gifItemDecoration: GifItemDecoration
     private lateinit var gifAdapter: GifAdapter
     private lateinit var gifDialog: AppCompatDialog
@@ -120,8 +120,8 @@ class GifActivity : DaggerAppCompatActivity(), GifContract.View, GifAdapter.OnIt
             return true
         }
     }
-    private val recyclerViewOnScrollListener = object : RecyclerView.OnScrollListener() {
-        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+    private val recyclerViewOnScrollListener = object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
 
             // Continuous scrolling
@@ -158,7 +158,7 @@ class GifActivity : DaggerAppCompatActivity(), GifContract.View, GifAdapter.OnIt
         toolbar.setTitle(R.string.main_screen_title)
         setSupportActionBar(toolbar)
 
-        gridLayoutManager = GridLayoutManager(this, PORTRAIT_COLUMNS)
+        gridLayoutManager = androidx.recyclerview.widget.GridLayoutManager(this, PORTRAIT_COLUMNS)
         gifItemDecoration = GifItemDecoration(
             resources.getDimensionPixelSize(R.dimen.gif_adapter_item_offset),
             gridLayoutManager.spanCount)

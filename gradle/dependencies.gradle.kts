@@ -1,11 +1,11 @@
 // common
 val androidGradleVersion            = "3.3.0-alpha10"
 val kotlinVersion                   = "1.2.70"
-val supportLibraryVersion           = "28.0.0"
-val daggerVersion                   = "2.17"
+val androidXVersion                 = "1.0.0-rc02"
+val daggerVersion                   = "2.16" // https://github.com/google/dagger/issues/1245
 val okHttpVersion                   = "3.11.0"
 val retrofitVersion                 = "2.4.0"
-val espressoVersion                 = "3.0.2"
+val espressoVersion                 = "3.1.0-alpha4"
 val leakCanaryVersion               = "1.5.4" // TODO 1.6.1 crash?
 val glideVersion                    = "4.8.0"
 
@@ -29,13 +29,8 @@ extra["gradleVersionsPlugin"]       = "com.github.ben-manes:gradle-versions-plug
 extra["ktlintGradle"]               = "gradle.plugin.org.jlleitschuh.gradle:ktlint-gradle:5.1.0"
 
 // implementation
-extra["design"]                     = "com.android.support:design:${supportLibraryVersion}"
-extra["appcompatv7"]                = "com.android.support:appcompat-v7:${supportLibraryVersion}"
-extra["supportv4"]                  = "com.android.support:support-v4:${supportLibraryVersion}"
-extra["recyclerviewv7"]             = "com.android.support:recyclerview-v7:${supportLibraryVersion}"
-extra["cardviewv7"]                 = "com.android.support:cardview-v7:${supportLibraryVersion}"
-extra["supportAnnotations"]         = "com.android.support:support-annotations:${supportLibraryVersion}"
-extra["constraintLayout"]           = "com.android.support.constraint:constraint-layout:1.1.0"
+extra["material"]                   = "com.google.android.material:material:1.0.0"
+extra["constraintLayout"]           = "androidx.constraintlayout:constraintlayout:1.1.3"
 extra["kotlinStdlib"]               = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}"
 extra["kotlinReflect"]              = "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
 extra["rxAndroid"]                  = "io.reactivex.rxjava2:rxandroid:2.1.0"
@@ -64,14 +59,13 @@ extra["daggerAndroidProcessor"]     = "com.google.dagger:dagger-android-processo
 extra["glideCompiler"]              = "com.github.bumptech.glide:compiler:${glideVersion}"
 
 // androidTestImplementation
-extra["espressoCore"]               = "com.android.support.test.espresso:espresso-core:${espressoVersion}"
-extra["espressoIntents"]            = "com.android.support.test.espresso:espresso-intents:${espressoVersion}"
-extra["espressoContrib"]            = "com.android.support.test.espresso:espresso-contrib:${espressoVersion}"
-extra["testingSupportLib"]          = "com.android.support.test:testing-support-lib:0.1"
-extra["runner"]                     = "com.android.support.test:runner:1.0.2"
+extra["espressoCore"]               = "androidx.test.espresso:espresso-core:${espressoVersion}"
+extra["espressoIntents"]            = "androidx.test.espresso:espresso-intents:${espressoVersion}"
+extra["espressoContrib"]            = "androidx.test.espresso:espresso-contrib:${espressoVersion}"
+extra["runner"]                     = "androidx.test:runner:1.1.0-alpha4"
 
 // androidTestUtil
-extra["orchestrator"]               = "com.android.support.test:orchestrator:1.0.2"
+extra["orchestrator"]               = "androidx.test:orchestrator:1.1.0-alpha4"
 
 // testImplementation
 extra["junit"]                      = "junit:junit:4.12"
